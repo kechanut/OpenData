@@ -10,11 +10,11 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 
-print("Analyse des données, veuillez patienter")
+
 
 file = open('reseau-cyclable.csv','r')
 fichier_troncon = csv.DictReader(file, delimiter=';')
-
+print("Analyse des données, veuillez patienter")
 
 liste_releves = []
 nombre_piste_by_periode = {
@@ -622,73 +622,5 @@ while choix != "exit":
         exit()
     else:
         print("Cette commande n'existe pas")
-#creation des axes du graphique d'évolution du nombre de cycliste
-xtrimestre = np.array(["T1 2018", "T2 2018", "T3 2018", "T4 2018", "T1 2019", "T2 2019", "T3 2019", "T4 2019", "T1 2020", "T2 2020", "T3 2020"])
-ytrimestre = np.array([
-    comptage_trimestre['T1_2018'],
-    comptage_trimestre['T2_2018'],
-    comptage_trimestre['T3_2018'],
-    comptage_trimestre['T4_2018'],
-    comptage_trimestre['T1_2019'],
-    comptage_trimestre['T2_2019'],
-    comptage_trimestre['T3_2019'],
-    comptage_trimestre['T4_2019'],
-    comptage_trimestre['T1_2020'],
-    comptage_trimestre['T2_2020'],
-    comptage_trimestre['T3_2020']
-
-])
-
-
-plt.title("Nombre de cycliste par trimestre depuis 2018")
-plt.plot(xtrimestre, ytrimestre)
-ax = plt.subplot()
-ax.xaxis.get_children()[1].set_size(100)
-for label in ax.xaxis.get_ticklabels()[::2]:
-       label.set_visible(False)
-plt.show()
-
-
-
-#creation du graphique du nombre de cycliste en fonction du nombre de km
-xkmpiste = np.array([
-    km_piste_by_periode['nb_km_mi_2018'],
-    km_piste_by_periode['nb_km_fin_2018'],
-    km_piste_by_periode['nb_km_mi_2019'],
-    km_piste_by_periode['nb_km_fin_2019'],
-    km_piste_by_periode['nb_km_mi_2020']
-
-])
-ytrimestre = np.array([
-    comptage_trimestre['T1_2018'] + comptage_trimestre['T2_2018'],
-    comptage_trimestre['T3_2018'] + comptage_trimestre['T4_2018'],
-    comptage_trimestre['T1_2019'] + comptage_trimestre['T2_2019'],
-    comptage_trimestre['T3_2019'] + comptage_trimestre['T4_2019'],
-    comptage_trimestre['T1_2020'] + comptage_trimestre['T2_2020']
-
-])
-
-plt.scatter(xkmpiste, ytrimestre,  c=['blue', 'blue', 'orange', 'orange', 'green'])
-plt.xlabel("Nombre KM de piste")
-plt.ylabel("Nombre de cyclistes en million")
-plt.title("Evolution nombre de cycliste / KM de piste en semestre")
-plt.show()
-
-
-#affichage des données importantes comme le nombre de cycliste chaque mois et le total par année et le nombre d'enregistrement étuider pour trouver ces valeurs.
-
-print("Nombre de cycliste en 2018 par mois pour un total de ", nb, "comptages : ")
-for cle,valeur in comptage_2018.items():
-    print(cle , " : ", valeur )
-print("\n")
-
-print("Nombre de cycliste en 2019 par mois pour un total de ", nb2019, "comptages : ")
-for cle,valeur in comptage_2019.items():
-    print(cle , " : ", valeur )
-print("\n")
-
-print("Nombre de cycliste en 2020 par mois pour un total de ", nb2020, "comptages : ")
-for cle,valeur in comptage_2020.items():
-    print(cle , " : ", valeur )
 
 
