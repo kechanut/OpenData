@@ -97,8 +97,6 @@ for row in liste_releves:
         nombre_piste_by_periode['S2_2020'] += 1
         km_piste_by_periode['S2_2020'] += row['longueur']
 
-
-#on affecte le nombre de piste à la fin de chaque semestre depuis 2018
 #on affecte le nombre de piste à la fin de chaque semestre depuis 2018
 
 nombre_piste_by_periode['nb_mi_2018'] = nombre_piste_by_periode['before2018'] + nombre_piste_by_periode['S1_2018']
@@ -129,10 +127,7 @@ y = np.array([
 ])
 
 
-#construction du graphe de l'évolution du nombre de km de poste depuis 2018 e
-plt.plot(x, y)
-plt.title("Nombre de piste depuis 2018")
-plt.show()
+
 
 #on affecte le nombre de Km de piste à la fin de chaque semestre depuis 2018
 x1 = np.array(["debut 2018", "mi 2018", "debut 2019", "mi 2019", "debut 2020","mi 2020", "aujourd'hui"])
@@ -146,9 +141,6 @@ y1 = np.array([
     km_piste_by_periode['nb_km_fin_2020']
 ])
 
-plt.plot(x1, y1)
-plt.title("Nombre de km de piste depuis 2018")
-plt.show()
 
 
 #recupération du fichier CSV concernant les comptages de cycliste de l'année 2019
@@ -406,15 +398,6 @@ y2020 = np.array([
     comptage_2020['novembre'],
     comptage_2020['decembre']
 ])
-
-#traçage des courbes et affichage du graphique
-plt.plot(xcomptage, y2018,"o-", label="2018")
-plt.plot(xcomptage, y2019,"o-", label="2019")
-plt.plot(xcomptage, y2020,"o-", label="2020")
-plt.legend()
-plt.title("Nombre de cycliste par mois")
-plt.show()
-
 
 
 #creation d'un dictionnnaire indiquant le nombre de passage de cycliste par semestre
