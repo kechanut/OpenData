@@ -1,22 +1,17 @@
-<<<<<<< HEAD
-=======
+
 # This is a sample Python script.
 
 # Press Maj+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
->>>>>>> bb777fcd8f123f8c8e2f34ba4c9af5af4658f5a0
 import csv
 import time
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-<<<<<<< HEAD
 print("Analyse des données, veuillez patienter")
 
-=======
->>>>>>> bb777fcd8f123f8c8e2f34ba4c9af5af4658f5a0
 file = open('reseau-cyclable.csv','r')
 fichier_troncon = csv.DictReader(file, delimiter=';')
 
@@ -52,10 +47,6 @@ km_piste_by_periode = {
     'nb_km_fin_2019': 0,
     'nb_km_mi_2020': 0,
     'nb_km_fin_2020': 0,
-<<<<<<< HEAD
-=======
-
->>>>>>> bb777fcd8f123f8c8e2f34ba4c9af5af4658f5a0
 }
 
 
@@ -106,13 +97,10 @@ for row in liste_releves:
         nombre_piste_by_periode['S2_2020'] += 1
         km_piste_by_periode['S2_2020'] += row['longueur']
 
-<<<<<<< HEAD
 
 #on affecte le nombre de piste à la fin de chaque semestre depuis 2018
-=======
 #on affecte le nombre de piste à la fin de chaque semestre depuis 2018
 
->>>>>>> bb777fcd8f123f8c8e2f34ba4c9af5af4658f5a0
 nombre_piste_by_periode['nb_mi_2018'] = nombre_piste_by_periode['before2018'] + nombre_piste_by_periode['S1_2018']
 nombre_piste_by_periode['nb_fin_2018'] = nombre_piste_by_periode['nb_mi_2018'] + nombre_piste_by_periode['S2_2018']
 nombre_piste_by_periode['nb_mi_2019'] = nombre_piste_by_periode['nb_fin_2018'] + nombre_piste_by_periode['S1_2019']
@@ -129,8 +117,6 @@ km_piste_by_periode['nb_km_mi_2020'] = km_piste_by_periode['nb_km_fin_2019'] + k
 km_piste_by_periode['nb_km_fin_2020'] = km_piste_by_periode['nb_km_mi_2020'] + km_piste_by_periode['S2_2020']
 
 
-<<<<<<< HEAD
-=======
 x = np.array(["debut 2018", "mi 2018", "debut 2019", "mi 2019", "debut 2020","mi 2020", "aujourd'hui"])
 y = np.array([
     nombre_piste_by_periode['before2018'],
@@ -165,7 +151,6 @@ plt.title("Nombre de km de piste depuis 2018")
 plt.show()
 
 
->>>>>>> bb777fcd8f123f8c8e2f34ba4c9af5af4658f5a0
 #recupération du fichier CSV concernant les comptages de cycliste de l'année 2019
 file_comptage_2019 = open('2019_comptage-velo-donnees-compteurs-2.csv','r')
 fichier_comptage_2019 = csv.DictReader(file_comptage_2019, delimiter=';')
@@ -310,10 +295,6 @@ for row in fichier_comptage_2018:
 file_comptage_2020 = open('comptage-velo-donnees-compteurs.csv','r')
 fichier_comptage_2020 = csv.DictReader(file_comptage_2020, delimiter=';')
 
-<<<<<<< HEAD
-=======
-
->>>>>>> bb777fcd8f123f8c8e2f34ba4c9af5af4658f5a0
 comptage_2020 = {
     'janvier': 0,
     'fevrier': 0,
@@ -379,8 +360,6 @@ for row in fichier_comptage_2020:
 
             comptage_2020['total'] += float(row['Comptage horaire'])
 
-<<<<<<< HEAD
-=======
 
 
 #creation du graphique relatant le nombre de cycliste par mois de chaque année
@@ -438,7 +417,6 @@ plt.show()
 
 
 
->>>>>>> bb777fcd8f123f8c8e2f34ba4c9af5af4658f5a0
 #creation d'un dictionnnaire indiquant le nombre de passage de cycliste par semestre
 comptage_trimestre = {
     'T1_2018': comptage_2018['janvier'] + comptage_2018['fevrier'] + comptage_2018['mars'],
@@ -454,8 +432,6 @@ comptage_trimestre = {
     'T3_2020': comptage_2020['juillet'] + comptage_2020['aout'] + comptage_2020['septembre'],
     'T4_2020': comptage_2020['octobre'] + comptage_2020['novembre'] + comptage_2020['decembre'],
 }
-
-<<<<<<< HEAD
 
 # construction du graphe de l'évolution du nombre de km de poste depuis 2018 e
 def graphe_evolution_nombre_piste():
@@ -663,7 +639,6 @@ while choix != "exit":
         exit()
     else:
         print("Cette commande n'existe pas")
-=======
 #creation des axes du graphique d'évolution du nombre de cycliste
 xtrimestre = np.array(["T1 2018", "T2 2018", "T3 2018", "T4 2018", "T1 2019", "T2 2019", "T3 2019", "T4 2019", "T1 2020", "T2 2020", "T3 2020"])
 ytrimestre = np.array([
@@ -733,6 +708,4 @@ print("Nombre de cycliste en 2020 par mois pour un total de ", nb2020, "comptage
 for cle,valeur in comptage_2020.items():
     print(cle , " : ", valeur )
 
-
->>>>>>> bb777fcd8f123f8c8e2f34ba4c9af5af4658f5a0
 
